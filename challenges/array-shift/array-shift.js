@@ -7,6 +7,7 @@ function insertShiftArray(array, value) {
   // recreate the second half with the new value added
   //***** 
 
+  //loop through array with conditional, at mid index insert value and after continute inserting old array values
   const newArray = []
   for (let i = 0; i <= array.length; i++) {
     if (i < midIndex) {
@@ -16,7 +17,7 @@ function insertShiftArray(array, value) {
     } else {
       newArray[i] = array[i - 1]
     }
-    console.log('=================new array', i, newArray)
+    // console.log('=================new array', i, newArray)
   }
   // return the new array
   console

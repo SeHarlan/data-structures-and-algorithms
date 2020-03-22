@@ -1,0 +1,23 @@
+{
+  "name": "data-structures-and-algorithms",
+  "version": "1.0.0",
+  "description": "1. array-map",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "npm run test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeHarlan/data-structures-and-algorithms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SeHarlan/data-structures-and-algorithms/issues"
+  },
+  "homepage": "https://github.com/SeHarlan/data-structures-and-algorithms#readme",
+  "dependencies": {
+    "jest": "^25.1.0"
+  }
+}

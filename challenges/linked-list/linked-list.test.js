@@ -63,6 +63,30 @@ console.log('===============================================')
         expect(insertionLL.insertAfter('test 4', 'last test')).toEqual({ data: 'before 1', next: {data: 'test 1', next: { data: 'test 2', next: { data: 'before 3', next :{ data: 'test 3', next: {data: 'after 3', next: { data: 'test 4', next: {data: 'last test', next: null }}}}}}}})
       })
     })
+
+    describe('kth from end', () => {
+
+      const kthLL = new LinkedList
+      kthLL.insert('test 3')
+      
+      it('returns null when k is greater than ll length', () => {
+        expect(kthLL.kthFromEnd(6)).toEqual(null)
+      }) 
+      it('where k is the length of the ll', () => {
+        expect(kthLL.kthFromEnd(3)).toEqual(null)
+      }) 
+      it('where k is not a positive integeer', () => {
+        expect(kthLL.kthFromEnd(-2)).toEqual(null)
+      })
+      it('where liked list is size of 1', () => {
+        expect(kthLL.kthFromEnd(0)).toEqual('test 3')
+      })
+      it('returns value at index specified', () => {
+        kthLL.insert('test 2')
+        kthLL.insert('test 1')
+        expect(kthLL.kthFromEnd(1)).toEqual('test 2')
+      })
+    })
   })
 
 

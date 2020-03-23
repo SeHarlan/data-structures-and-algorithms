@@ -76,6 +76,30 @@ class LinkedList {
     }
     return this.head
   }
+  // ================ kth from end
+  kthFromEnd(kth) {
+    if (kth < 0) return null;
+    let node = this.head
+    let counter = 0
+    while(node) {
+      node.index = counter
+      counter++
+      node = node.next
+    }
+    const length = counter -1
+    if (length < kth) return null
+
+    const wantedIndex = length - kth;
+    console.log('wanted Index', wantedIndex)
+    let nodeAgain = this.head
+    while(nodeAgain) {
+      console.log('node ++++', nodeAgain.data, nodeAgain.index)
+      if (nodeAgain.index === wantedIndex ) {
+        return nodeAgain.data
+      }
+      nodeAgain = nodeAgain.next
+    }
+  }
 }
 
 module.exports = {

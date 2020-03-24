@@ -13,7 +13,6 @@ function mergeList(list1, list2) {
     if (node1) node1 = node1.next
     if (node2) node2 = node2.next
   }
-
   return newLL
 }
 

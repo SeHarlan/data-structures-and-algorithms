@@ -1,4 +1,4 @@
-const { Stack, Queue } = require('./stacks-and-queues')
+const { Stack, Queue, PsuedoQueue } = require('./stacks-and-queues')
 
 
 describe('stacks test', ()=> {
@@ -26,7 +26,6 @@ describe('stacks test', ()=> {
     stack.pop()
     expect(stack.isEmpty()).toEqual(true)
   })
-});
 
 describe('queue test', () => {
   const q = new Queue
@@ -53,5 +52,27 @@ describe('queue test', () => {
     q.dequeue()
     expect(q.isEmpty()).toEqual(true)
   })
+});
+
+describe('psuedo queue test', () => {
+  const pq = new PsuedoQueue
+  
+  it('Can successfully enqueue into a queue', () => {
+    expect(pq.enqueue('test 1')).toEqual({data: 'test 1', next: null})
+  })
+  it('Can successfully enqueue multiple values into a queue', () => {
+    pq.enqueue('test 2')
+    expect(pq.enqueue('test 3')).toEqual({data: 'test 1', next: {data: 'test 2', next: {data: 'test 3', next: null
+  }}})
+  })
+  it('Can successfully dequeue out of a queue the expected value', () => {
+    expect(pq.dequeue()).toEqual('test 1')
+  })
+  it('Can successfully empty a queue after multiple dequeues', () => {
+    pq.dequeue()
+    pq.dequeue()
+    expect(pq.isEmpty()).toEqual(true)
+  })
 
 });
+

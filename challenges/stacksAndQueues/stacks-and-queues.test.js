@@ -26,6 +26,7 @@ describe('stacks test', ()=> {
     stack.pop()
     expect(stack.isEmpty()).toEqual(true)
   })
+});
 
 describe('queue test', () => {
   const q = new Queue
@@ -71,8 +72,7 @@ describe('psuedo queue test', () => {
   it('Can successfully empty a queue after multiple dequeues', () => {
     pq.dequeue()
     pq.dequeue()
-    expect(pq.isEmpty()).toEqual(true)
+    expect(pq.stack1.top).toEqual(null)
   })
 
 });
-

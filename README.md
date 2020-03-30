@@ -4,3 +4,4 @@
 1. array-shift
 1. array-binary-search
 1. linked-list
+1. multi-bracket-validation

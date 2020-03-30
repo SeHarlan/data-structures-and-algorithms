@@ -33,8 +33,8 @@ describe('tree tests', () => {
 
   })
   it('Can successfully return a collection from a preorder traversal', () => {
-    bst.add(2)
     bst.add(7)
+    bst.add(2)
     bst.add(20)
     bst.add(13)
     expect(bst.preOrder()).toEqual([10, 5, 2, 7, 16, 13, 20])
@@ -44,6 +44,15 @@ describe('tree tests', () => {
   })
   it('Can successfully return a collection from a postorder traversal', () => {
     expect(bst.postOrder()).toEqual([2, 7, 5, 13, 20, 16, 10])
+  })
+  it('returns true when data is contained', () => {
+    expect(bst.contains(10)).toEqual(true)
+    expect(bst.contains(16)).toEqual(true)
+    expect(bst.contains(2)).toEqual(true)
+  })
+  it('returns false when data is not contained', () => {
+    expect(bst.contains(33)).toEqual(false)
+    expect(bst.contains(1)).toEqual(false)
   })
 })
 

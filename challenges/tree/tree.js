@@ -82,9 +82,8 @@ class BinarySearchTree {
       return this.recursiveContains(node.leftChild, data)
     } else if (data > node.data) {
       return this.recursiveContains(node.rightChild, data)
+    }
     } else return true
-  }
-  
   contains(data) {
     return this.recursiveContains(this.root, data)
   }

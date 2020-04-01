@@ -61,6 +61,9 @@ describe('tree tests', () => {
     bst.add(24)
     expect(bst.breadthFirst()).toEqual([10, 5, 16, 2, 7, 13, 20, 1, 6, 18, 24])
   })
+  it('returns the greatest value', () => {
+    expect(bst.findMaxValue()).toEqual(24)
+  })
 })
 
 

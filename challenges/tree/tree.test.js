@@ -54,6 +54,13 @@ describe('tree tests', () => {
     expect(bst.contains(33)).toEqual(false)
     expect(bst.contains(1)).toEqual(false)
   })
+  it('returns a list of tree values breadth first', () => {
+    bst.add(1)
+    bst.add(6)
+    bst.add(18)
+    bst.add(24)
+    expect(bst.breadthFirst()).toEqual([10, 5, 16, 2, 7, 13, 20, 1, 6, 18, 24])
+  })
 })
 
 

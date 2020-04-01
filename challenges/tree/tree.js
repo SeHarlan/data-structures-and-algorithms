@@ -14,6 +14,7 @@ class BinarySearchTree {
     this.inOrderArray = []
     this.preOrderArray = []
     this.postOrderArray = []
+    this.breadthArray = []
   }
   
   add(data) {
@@ -86,6 +87,27 @@ class BinarySearchTree {
   }
   contains(data) {
     return this.recursiveContains(this.root, data)
+  }
+  breadthRecursion(nodeArray) {
+    if (!nodeArray.length) return
+    const nextArray = []
+    nodeArray.forEach(node => {
+      if (node.leftChild) {
+        this.breadthArray.push(node.leftChild.data)
+        nextArray.push(node.leftChild)
+      }
+      if (node.rightChild) {
+        this.breadthArray.push(node.rightChild.data)
+        nextArray.push(node.rightChild)
+      }
+    })
+    this.breadthRecursion(nextArray)
+  }
+
+  breadthFirst() {
+    this.breadthArray.push(this.root.data)
+    this.breadthRecursion([this.root])
+    return this.breadthArray
   }
 }
 

@@ -109,6 +109,13 @@ class BinarySearchTree {
     this.breadthRecursion([this.root])
     return this.breadthArray
   }
+  findMaxValue() {
+    let node = this.root
+    while(node.rightChild) {
+      node = node.rightChild
+    }
+    return node.data
+  }
 }
 
 
